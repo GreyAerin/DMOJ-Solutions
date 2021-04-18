@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 #define ll long long
-const ll MAXN = 5e6+5;
+const ll MAXN = 2e6+5;
 
 using namespace std;
 
