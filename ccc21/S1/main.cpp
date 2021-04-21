@@ -30,7 +30,9 @@ int main()
         double tl = max(h1, h2) - min(h1, h2);
         double t = tl * w / 2;
         e += b + t;
-        //printf("%f %f %f", w, h1, h2);
+        
     }
-    printf("%f", e);
+    cout << e << endl;
+    //printf("%f", e);
+    return 0;
 }
