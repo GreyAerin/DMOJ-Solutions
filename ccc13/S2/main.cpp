@@ -25,10 +25,9 @@ int main(){
         t = pastBridge.front();
         pastBridge.pop();
         w -= t;
-        cout <<"W: " << w+t << "T: " << t << endl;
+        
       }
       if(w <= m){
-        cout << "W: " << w << endl;
         tc++;
       }else{
         cout << tc;

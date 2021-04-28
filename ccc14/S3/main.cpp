@@ -1,65 +1,45 @@
-#include <iostream>
-#include <stack>
+#include<bits/stdc++.h>
+#define ll long long
+const ll MAXN = 2e6+5;
 
 using namespace std;
 
-int main()
-{
-    bool flag = true;
-    stack<int> in;
-    stack<int> sd;
-    int t, n, c, o = 1;
-    cin >> t >> n;
-    for (int i = 0; i < t; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            cin >> c;
-            in.push(c);
-        }
-
-        while (flag)
-        {
-            if (in.size() > 0)
-            {
-                if (in.top() == o)
-                {
-                    in.pop();
-                    if (o == 4)
-                    {
-                        o = 1;
-                    }
-                    else
-                    {
-                        o++;
-                    }
-                }
-                else
-                {
-                    sd.push(in.top());
-                    in.pop();
-                }
-            }
-            else
-            {
-                if (sd.top() == o)
-                {
-                    sd.pop();
-                    if (o == 4)
-                    {
-                        o = 1;
-                    }
-                    else
-                    {
-                        o++;
-                    }
-                }
-                else
-                {
-                    flag = false;
-                    break;
-                }
-            }
-        }
-    }
+int main(){
+  cin.sync_with_stdio(0);
+  cin.tie(NULL);
+  int t;
+  cin >> t;
+  vector<char> output;
+  for(int i =0; i < t; i++){
+      int cNum, in;
+      cin >> cNum;
+      vector<int>mnt;
+      vector<int>bnch;
+      for(int j = 0; j < cNum; j++){
+          cin >> in;
+          mnt.push_back(in);
+      }
+      int car = cNum - 1;
+      int order = 1;
+      char state = 'Y';
+      while (order <= cNum && state == 'Y'){
+          if(car >= 0 && order == mnt[car]){
+              car--;
+              order++;
+          }else if(bnch.size() > 0 && order == bnch.back()){
+              bnch.pop_back();
+              order++;
+          }else if(car >= 0){
+              bnch.push_back(mnt[car]);
+              car--;
+          }else{
+              state = 'N';
+          }
+      }
+      output.push_back(state);
+  }
+  for(char x: output){
+      cout << x << endl;
+  }
+  return 0;
 }
