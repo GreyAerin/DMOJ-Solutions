@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 height_a = int(input())
 height_b = int(input())
 height_c = int(input())
