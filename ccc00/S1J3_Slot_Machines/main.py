@@ -29,5 +29,5 @@ while True:
     if m3 == 10:
         q += 9
         m3 = 0
-    
+
 print("Martha plays " + str(c) + " times before going broke.")
